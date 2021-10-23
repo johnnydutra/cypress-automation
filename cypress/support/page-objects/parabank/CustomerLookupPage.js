@@ -1,37 +1,37 @@
 class CustomerLookupPage {
 
-    customerLookupAppDiv = cy.get();
-    customerLookupAppHeader = cy.get();
+    customerLookupAppDiv = cy.get("#rightPanel");
+    customerLookupAppHeader = cy.get("h1");
 
-    firstNameLabel = cy.get();
+    firstNameLabel = cy.xpath("(//table[@class='form2']//b)[1]");
     firstNameInput = cy.get("#firstName");
     firstNameError = cy.get("#firstName.errors");
 
-    lastNameLabel = cy.get();
+    lastNameLabel = cy.xpath("(//table[@class='form2']//b)[2]");
     lastNameInput = cy.get("#lastName");
     lastNameError = cy.get("#address.street.errors");
 
-    addressLabel = cy.get();
+    addressLabel = cy.xpath("(//table[@class='form2']//b)[3]");
     addressInput = cy.get("#address.street");
     addressError = cy.get("#address.street.errors");
 
-    cityLabel = cy.get();
+    cityLabel = cy.xpath("(//table[@class='form2']//b)[4]");
     cityInput = cy.get("#address.city");
     cityError = cy.get("#address.city.errors");
 
-    stateLabel = cy.get();
+    stateLabel = cy.xpath("(//table[@class='form2']//b)[5]");
     stateInput = cy.get("#address.state");
     stateError = cy.get("#address.state.errors");
 
-    zipCodeLabel = cy.get();
+    zipCodeLabel = cy.xpath("(//table[@class='form2']//b)[6]");
     zipCodeInput = cy.get("#address.zipCode");
     zipCodeError = cy.get("#address.zipCode.errors");
 
-    socialSecurityNumberLabel = cy.get();
+    socialSecurityNumberLabel = cy.xpath("(//table[@class='form2']//b)[7]");
     socialSecurityNumberInput = cy.get("#ssn");
     socialSecurityNumberError = cy.get("#ssn.errors");
 
-    findMyLoginInfoButton = cy.get();
+    findMyLoginInfoButton = cy.xpath("//input[@value='Find My Login Info']");
 
     inputFirstName(firstName) {
         this.firstNameInput.clear().type(firstName);
@@ -63,7 +63,7 @@ class CustomerLookupPage {
 
     clickFindMyLoginInfoButton() {
         this.findMyLoginInfoButton.click();
-    }
+    };
 
     fillForm(firstName, lastName, address, city, state, zipCode, socialSecurityNumber) {
         this.inputFirstName(firstName);
