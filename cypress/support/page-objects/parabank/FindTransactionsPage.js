@@ -1,22 +1,22 @@
 class FindTransactionsPage {
 
-    findTransactionsAppDiv = cy.get();
-    findTransactionsAppHeader = cy.get();
+    findTransactionsAppDiv = cy.get(".ng-scope");
+    findTransactionsAppHeader = cy.get("h1");
 
-    accountSelect = cy.get();
+    accountSelect = cy.get("#accountId");
 
-    transactionIdInput = cy.get();
-    findByTransactionIdButton = cy.get();
+    transactionIdInput = cy.get("#criteria.transactionId");
+    findByTransactionIdButton = cy.xpath("(//button)[1]");
 
-    exactDateInput = cy.get();
-    findByDateButton = cy.get();
+    exactDateInput = cy.get("#criteria.onDate");
+    findByDateButton = cy.xpath("(//button)[2]");
 
-    fromDateInput = cy.get();
-    toDateInput = cy.get();
-    findByDateRangeButton = cy.get();
+    fromDateInput = cy.get("#criteria.fromDate");
+    toDateInput = cy.get("#criteria.toDate");
+    findByDateRangeButton = cy.xpath("(//button)[3]");
 
-    amountInput = cy.get();
-    findByAmountButton = cy.get();
+    amountInput = cy.get("#criteria.amount");
+    findByAmountButton = cy.xpath("(//button)[4]");
 
     selectAccount(account) {
         this.accountSelect.select(account);
