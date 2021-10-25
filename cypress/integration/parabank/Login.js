@@ -14,7 +14,7 @@ context("Login flow tests", () => {
     const loginErrorText = "Please enter a username and password.";
 
     beforeEach(() => {
-      cy.visit("https://parabank.parasoft.com/");      
+        cy.visit("https://parabank.parasoft.com/");      
     });
   
     it("Valid login", () => {
@@ -49,5 +49,5 @@ context("Login flow tests", () => {
         landingPage.getLoginErrorText().should("have.text", loginErrorText);
     });
 
-  })
+});
   
