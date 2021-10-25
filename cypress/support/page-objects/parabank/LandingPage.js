@@ -1,21 +1,27 @@
-class LandingPage {
+export class LandingPage {
 
-    usernameInput = cy.get("[name=username");
-    passwordInput = cy.get("[name=password");
-    loginButton = cy.xpath("//input[@value='Log In']");
-    forgotLoginLink = cy.xpath("(//div[@id='loginPanel']//a)[1]");
-    registerLink = cy.xpath("(//div[@id='loginPanel']//a)[2]");
+    // Locators
+
+    getUsernameInput = () => cy.get("[name=username");
+    getPasswordInput = () => cy.get("[name=password");
+    getLoginButton = () => cy.xpath("//input[@value='Log In']");
+    getForgotLoginLink = () => cy.xpath("(//div[@id='loginPanel']//a)[1]");
+    getRegisterLink = () => cy.xpath("(//div[@id='loginPanel']//a)[2]");
+    getLoginErrorHeader = () => cy.get("h1");
+    getLoginErrorText = () => cy.get(".error");
+
+    // Actions
 
     fillUsername(username) {
-        this.usernameInput.clear().type(username)
+        this.getUsernameInput().clear().type(username);
     };
     
     fillPassword(password) {
-        this.passwordInput.clear().type(password);
+        this.getPasswordInput().clear().type(password);
     };
 
     clickLoginButton() {
-        this.loginButton.click();
+        this.getLoginButton().click();
     };
 
     inputUserCredentials(username, password) {
@@ -29,12 +35,11 @@ class LandingPage {
     };
 
     clickForgotLoginLink() {
-        this.forgotLoginLink.click();
+        this.getForgotLoginLink().click();
     };
 
     clickRegisterLink() {
-        this.registerLink.click();
+        this.getRegisterLink().click();
     };
 
 };
-export default LandingPage
