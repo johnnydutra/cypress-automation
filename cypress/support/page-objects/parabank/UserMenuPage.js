@@ -1,16 +1,20 @@
-class UserMenuPage {
+export class UserMenuPage {
 
-    welcomeMessageText = cy.get(".smallText");
-    menuHeaderText = cy.get("h2");
+    // Locators
+
+    getWelcomeMessageText = () => cy.get(".smallText");
+    getMenuHeaderText = () => cy.get("h2");
     
-    openNewAccountLink = cy.xpath("//div[@id='leftPanel']//a[text()='Open New Account']");
-    accountOverviewLink = cy.xpath("//div[@id='leftPanel']//a[text()='Accounts Overview']");
-    transferFundsLink = cy.xpath("//div[@id='leftPanel']//a[text()='Transfer Funds']");
-    billPayLink = cy.xpath("//div[@id='leftPanel']//a[text()='Bill Pay']");
-    findTransactionsLink = cy.xpath("//div[@id='leftPanel']//a[text()='Find Transactions']");
-    updateContactInfoLink = cy.xpath("//div[@id='leftPanel']//a[text()='Update Contact Info']");
-    requestLoanLink = cy.xpath("//div[@id='leftPanel']//a[text()='Request Loan']");
-    logOutLink = cy.xpath("//div[@id='leftPanel']//a[text()='Log Out']");
+    getOpenNewAccountLink = () => cy.xpath("//div[@id='leftPanel']//a[text()='Open New Account']");
+    getAccountOverviewLink = () => cy.xpath("//div[@id='leftPanel']//a[text()='Accounts Overview']");
+    getTransferFundsLink = () => cy.xpath("//div[@id='leftPanel']//a[text()='Transfer Funds']");
+    getBillPayLink = () => cy.xpath("//div[@id='leftPanel']//a[text()='Bill Pay']");
+    getFindTransactionsLink = () => cy.xpath("//div[@id='leftPanel']//a[text()='Find Transactions']");
+    getUpdateContactInfoLink = () => cy.xpath("//div[@id='leftPanel']//a[text()='Update Contact Info']");
+    getRequestLoanLink = () => cy.xpath("//div[@id='leftPanel']//a[text()='Request Loan']");
+    getLogOutLink = () => cy.xpath("//div[@id='leftPanel']//a[text()='Log Out']");
+
+    // Actions
 
     accessOpenNewAccount() {
         this.openNewAccountLink.click();
@@ -44,5 +48,4 @@ class UserMenuPage {
         this.logOutLink.click()
     };
 
-}
-export default UserMenuPage
+};
