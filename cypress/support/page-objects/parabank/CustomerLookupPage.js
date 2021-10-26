@@ -1,68 +1,75 @@
-class CustomerLookupPage {
+export class CustomerLookupPage {
 
-    customerLookupAppDiv = cy.get("#rightPanel");
-    customerLookupAppHeader = cy.get("h1");
+    // Locators
 
-    firstNameLabel = cy.xpath("(//table[@class='form2']//b)[1]");
-    firstNameInput = cy.get("#firstName");
-    firstNameError = cy.get("#firstName.errors");
+    getCustomerLookupAppDiv = () => cy.get("#rightPanel");
+    getCustomerLookupAppHeader = () => cy.get("h1");
 
-    lastNameLabel = cy.xpath("(//table[@class='form2']//b)[2]");
-    lastNameInput = cy.get("#lastName");
-    lastNameError = cy.get("#address.street.errors");
+    getFirstNameLabel = () => cy.xpath("(//form[@id='lookupForm']//b)[1]");
+    getFirstNameInput = () => cy.get("#firstName");
+    getFirstNameError = () => cy.xpath("//span[@id='firstName.errors']");
 
-    addressLabel = cy.xpath("(//table[@class='form2']//b)[3]");
-    addressInput = cy.get("#address.street");
-    addressError = cy.get("#address.street.errors");
+    getLastNameLabel = () => cy.xpath("(//form[@id='lookupForm']//b)[2]");
+    getLastNameInput = () => cy.get("#lastName");
+    getLastNameError = () => cy.xpath("//span[@id='lastName.errors']");
 
-    cityLabel = cy.xpath("(//table[@class='form2']//b)[4]");
-    cityInput = cy.get("#address.city");
-    cityError = cy.get("#address.city.errors");
+    getAddressLabel = () => cy.xpath("(//form[@id='lookupForm']//b)[3]");
+    getAddressInput = () => cy.xpath("//input[@id='address.street']");
+    getAddressError = () => cy.xpath("//span[@id='address.street.errors']");
 
-    stateLabel = cy.xpath("(//table[@class='form2']//b)[5]");
-    stateInput = cy.get("#address.state");
-    stateError = cy.get("#address.state.errors");
+    getCityLabel = () => cy.xpath("(//form[@id='lookupForm']//b)[4]");
+    getCityInput = () => cy.xpath("//input[@id='address.city']");
+    getCityError = () => cy.xpath("//span[@id='address.city.errors']");
 
-    zipCodeLabel = cy.xpath("(//table[@class='form2']//b)[6]");
-    zipCodeInput = cy.get("#address.zipCode");
-    zipCodeError = cy.get("#address.zipCode.errors");
+    getStateLabel = () => cy.xpath("(//form[@id='lookupForm']//b)[5]");
+    getStateInput = () => cy.xpath("//input[@id='address.state']");
+    getStateError = () => cy.xpath("//span[@id='address.state.errors']");
 
-    socialSecurityNumberLabel = cy.xpath("(//table[@class='form2']//b)[7]");
-    socialSecurityNumberInput = cy.get("#ssn");
-    socialSecurityNumberError = cy.get("#ssn.errors");
+    getZipCodeLabel = () => cy.xpath("(//form[@id='lookupForm']//b)[6]");
+    getZipCodeInput = () => cy.xpath("//input[@id='address.zipCode']");
+    getZipCodeError = () => cy.xpath("//span[@id='address.zipCode.errors']");
 
-    findMyLoginInfoButton = cy.xpath("//input[@value='Find My Login Info']");
+    getSocialSecurityNumberLabel = () => cy.xpath("(//form[@id='lookupForm']//b)[7]");
+    getSocialSecurityNumberInput = () => cy.get("#ssn");
+    getSocialSecurityNumberError = () => cy.xpath("//span[@id='ssn.errors']");
+
+    getFindMyLoginInfoButton = () => cy.xpath("//input[@value='Find My Login Info']");
+
+    getConfirmationMessage = () => cy.xpath("(//div[@id='rightPanel']//p)[1]");
+    getRetrievedLoginData = () => cy.xpath("(//div[@id='rightPanel']//p)[2]");
+
+    // Actions
 
     inputFirstName(firstName) {
-        this.firstNameInput.clear().type(firstName);
+        this.getFirstNameInput().clear().type(firstName);
     };
 
     inputLastName(lastName) {
-        this.lastNameInput.clear().type(lastName);
+        this.getLastNameInput().clear().type(lastName);
     };
 
     inputAddress(address) {
-        this.addressInput.clear().type(address);
+        this.getAddressInput().clear().type(address);
     };
 
     inputCity(city) {
-        this.cityInput.clear().type(city);
+        this.getCityInput().clear().type(city);
     };
 
     inputState(state) {
-        this.stateInput.clear().type(state);
+        this.getStateInput().clear().type(state);
     };
 
     inputZipCode(zipCode) {
-        this.zipCodeInput.clear().type(zipCode);
+        this.getZipCodeInput().clear().type(zipCode);
     };
 
     inputSocialSecurityNumber(socialSecurityNumber) {
-        this.socialSecurityNumberInput.clear().type(socialSecurityNumber);
+        this.getSocialSecurityNumberInput().clear().type(socialSecurityNumber);
     };
 
     clickFindMyLoginInfoButton() {
-        this.findMyLoginInfoButton.click();
+        this.getFindMyLoginInfoButton().click();
     };
 
     fillForm(firstName, lastName, address, city, state, zipCode, socialSecurityNumber) {
@@ -80,5 +87,4 @@ class CustomerLookupPage {
         this.clickFindMyLoginInfoButton();
     };
 
-}
-export default CustomerLookupPage
+};

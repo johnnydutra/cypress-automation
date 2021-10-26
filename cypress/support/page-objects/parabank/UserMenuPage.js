@@ -17,35 +17,35 @@ export class UserMenuPage {
     // Actions
 
     accessOpenNewAccount() {
-        this.openNewAccountLink.click();
+        this.getOpenNewAccountLink().click();
     };
 
     accessAccountsOverview() {
-        this.accountOverviewLink.click();
+        this.getAccountOverviewLink().click();
     };
 
     accessTransferFunds() {
-        this.transferFundsLink.click();
+        this.getTransferFundsLink().click();
     };
 
     accessBillPay() {
-        this.billPayLink.click();
+        this.getBillPayLink().click();
     };
 
     accessFindTransactions() {
-        this.findTransactionsLink.click();
+        this.getFindTransactionsLink().click();
     };
 
     accessUpdateContactInfo() {
-        this.updateContactInfoLink.click();
+        this.getUpdateContactInfoLink().click();
     };
 
     accessRequestLoan() {
-        this.requestLoanLink.click();
+        this.getRequestLoanLink().click();
     };
 
     logUserOut() {
-        this.logOutLink.click()
+        this.getLogOutLink().click();
     };
 
 };
