@@ -52,7 +52,7 @@ export class RegisterPage {
 
     getConfirmationMessage = () => cy.xpath("(//div[@id='rightPanel']//p)[1]");
 
-    // Actoions
+    // Actions
 
     inputFirstName(firstName) {
         this.getFirstNameInput().clear().type(firstName);
